@@ -14,8 +14,8 @@
 
         <nav class="navbar">
             <div class="container-fluid">
-                <a class="navbar-brand"><i class="bi bi-tornado"></i></span></a>
-                <form class="d-flex" id="searchForm">
+                <a class="navbar-brand d-none d-lg-block"><i class="bi bi-tornado"></i></a>
+                <form class="d-flex" role="search" id="searchForm">
                     <input class="form-control me-2" type="text" placeholder="Search by city name" id="searchBox">
                     <button class="btn btn-light" type="button" onclick="search()"><i class="bi bi-search"></i></button>
                 </form>
@@ -24,8 +24,10 @@
                         <i class="bi bi-gear-wide-connected"></i>
                     </button>
                     <ul class="dropdown-menu">
-                            <li><h6 class="dropdown-header">Settings</h6></li>
-                            <li><a class="dropdown-item" href="#" onclick="changeUnits()" id="unit"></a></li>
+                        <li>
+                            <h6 class="dropdown-header">Settings</h6>
+                        </li>
+                        <li><a class="dropdown-item" href="#" onclick="changeUnits()" id="unit"></a></li>
                     </ul>
                 </div>
             </div>
@@ -36,6 +38,7 @@
                 <h2 class="display-2" id="cityName"></h2>
                 <h2 class="display-2" id="temperature"></h2>
                 <h4 class="display-4" id="description"></h4>
+                <p class="lead" id="feelsLike"></p>
             </div>
         </div>
     </div>

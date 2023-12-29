@@ -34,9 +34,10 @@ function search() {
     fetch(fullLink, requestOptions)
         .then(response => response.json())
         .then(result => {
-            document.getElementById("cityName").innerHTML = result.name,
+            document.getElementById("cityName").innerHTML = result.name + ", " + result.sys.country,
             document.getElementById("temperature").innerHTML = result.main.temp + unitDisplay,
             document.getElementById("description").innerHTML = result.weather[0].main
+            document.getElementById("feelsLike").innerHTML = "Feels like: " + result.main.feels_like + unitDisplay
         })
         .catch(error => {
             document.getElementById("cityName").innerHTML = "Enter a valid city name, ID or ZIP code.",
