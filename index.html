@@ -11,13 +11,23 @@
 </head>
 <body>
     <div id="bg">
+
         <nav class="navbar">
             <div class="container-fluid">
-                <a class="navbar-brand">Iván's weather site <span class="badge bg-secondary">In development</span></a>
+                <a class="navbar-brand"><i class="bi bi-tornado"></i></span></a>
                 <form class="d-flex" id="searchForm">
                     <input class="form-control me-2" type="text" placeholder="Search by city name" id="searchBox">
                     <button class="btn btn-light" type="button" onclick="search()"><i class="bi bi-search"></i></button>
                 </form>
+                <div class="btn-group dropstart">
+                    <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-gear-wide-connected"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                            <li><h6 class="dropdown-header">Settings</h6></li>
+                            <li><a class="dropdown-item" href="#" onclick="changeUnits()" id="unit"></a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
 

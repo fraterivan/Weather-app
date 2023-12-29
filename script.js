@@ -5,11 +5,26 @@ document.getElementById('searchForm').addEventListener('submit', function (e) {
 
 document.getElementById("cityName").innerHTML = "Search for a city."
 
-var city = ""
+var currentUnit = "metric"
+var unitDisplay = " °C"
+document.getElementById("unit").innerHTML = "Change to imperial units"
+function changeUnits() {
+    if (currentUnit == "metric") {
+        currentUnit = "imperial"
+        unitDisplay = " °F"
+        document.getElementById("unit").innerHTML = "Change to metric units"
+    }
+    else if (currentUnit == "imperial") {
+        currentUnit = "metric"
+        unitDisplay = " °C"
+        document.getElementById("unit").innerHTML = "Change to imperial units"
+    }
+}
 
+var city = ""
 function search() {
     var city = document.getElementById("searchBox").value
-    var fullLink = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=0a8852179994a8f3a7b7f2c49b5ef4d4&units=metric"
+    var fullLink = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=0a8852179994a8f3a7b7f2c49b5ef4d4&units=" + currentUnit
 
     var requestOptions = {
         method: 'GET',
@@ -20,7 +35,7 @@ function search() {
         .then(response => response.json())
         .then(result => {
             document.getElementById("cityName").innerHTML = result.name,
-            document.getElementById("temperature").innerHTML = result.main.temp + " °C",
+            document.getElementById("temperature").innerHTML = result.main.temp + unitDisplay,
             document.getElementById("description").innerHTML = result.weather[0].main
         })
         .catch(error => {

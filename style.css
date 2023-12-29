@@ -1,6 +1,5 @@
 html, body {
     height: 100%;
-    margin: 0;
     overflow: hidden;
 }
 
@@ -36,8 +35,8 @@ html, body {
 }
 
 #display {
-    width: fit-content;
     text-align: center;
+    width: fit-content;
     background: rgba(255, 255, 255, 0.25);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
